@@ -1,0 +1,99 @@
+body {
+    background: #10c0c6;
+    height: 100%;
+    width: 100%;
+  }
+  
+  #center {
+    width: 24px;
+    height: 24px;
+    display: block;
+    margin: -12px 0 0 -12px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+  }
+  
+  .absolute {
+    position: absolute;
+  }
+  
+  .mag-glass {
+    border: 1px dotted green;
+    height: 40px;
+    width: 40px;
+    position: relative;
+    z-index: 100;
+  }
+  .mag-glass .circle {
+    width: 24px;
+    height: 24px;
+    display: block;
+    position: relative;
+    border-radius: 50%;
+    border: 4px solid #fff;
+    margin-top: 0;
+    transition: width 0.5s, border-radius 0.4s, height 0.5s 0.5s, margin-top 0.5s, border-width 0.5s 0.5s;
+  }
+  .mag-glass .haste {
+    background: blue;
+    right: 0;
+    width: 24px;
+    transition: width 0.5s, top 0.5s;
+  }
+  .mag-glass .haste div {
+    background: red;
+    border-top: 4px solid white;
+    right: 0;
+    transform: rotate(55deg);
+    width: 20px;
+    transition: transform 1s;
+  }
+  .mag-glass.active {
+    height: 40px;
+    width: 240px;
+    z-index: 10;
+  }
+  .mag-glass.active .circle {
+    width: 240px;
+    height: 0;
+    margin-top: 38px;
+    display: block;
+    position: relative;
+    border-radius: 10px;
+    border-color: #4dde90;
+    border-width: 1px;
+    transition: width 0.5s, border-radius 0.4s, height 0.5s 0.5s, margin-top 0.5s 0.5s, border-width 0.5s 0.5s;
+  }
+  .mag-glass.active .haste {
+    width: 240px;
+    top: 50%;
+  }
+  .mag-glass.active .haste div {
+    border-top: 2px solid white;
+    width: 20px;
+  }
+  .mag-glass.active .haste div:last-child {
+    transform: rotate(-55deg);
+  }
+  
+  .mag-glass:hover {
+    cursor: pointer;
+  }
+  
+  input[name=search-input] {
+    background: transparent;
+    border: 0;
+    border-bottom: 1px solid #4dde90;
+    color: white;
+    opacity: 0;
+    top: 0;
+    height: 38px;
+    width: 200px;
+    font-size: 38px;
+    z-index: 10;
+  }
+  input[name=search-input].active {
+    opacity: 1;
+    z-index: 100;
+  }
